@@ -1,6 +1,7 @@
 # Crear una matriz 3D para almacenar datos de temperaturas
 # Primera dimensión: Ciudades (3 ciudades)
 # Segunda dimensión: Semanas (4 semanas)
+# Tercera dimensión: Días de la semana (7 días)
 temperaturas = [
     [   # Milagro
         [   # Semana 1
@@ -119,9 +120,10 @@ temperaturas = [
 ]
 
 # Calcular el promedio de temperaturas para cada ciudad y semana
-ciudades = ["Milagro", "Naraanjito", "Guayaquil"]
+ciudades = ["Milagro", "Naranjito", "Guayaquil"]
 for ciudad_idx, ciudad in enumerate(temperaturas):
     for semana_idx, semana in enumerate(ciudad):
         suma_temperaturas = sum([dia["temp"] for dia in semana])
         promedio = suma_temperaturas / len(semana)
         print(f"Promedio de temperaturas en {ciudades[ciudad_idx]}, Semana {semana_idx + 1}: {promedio:.2f} grados")
+    
