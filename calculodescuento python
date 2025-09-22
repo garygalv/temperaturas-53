@@ -1,25 +1,35 @@
-# Programa para calcular descuento según el monto de la compra
+    # Definición de la función
+def calcular_descuento(monto, descuento=0.10):
+    """
+    Calcula el descuento en función del monto y el porcentaje de descuento.
+    
+    Parámetros:
+        monto (float): monto total de la compra
+        descuento (float): porcentaje de descuento (por defecto 10%)
+    
+    Retorna:
+        float: monto del descuento calculado
+    """
+    monto_descuento = monto * descuento
+    return monto_descuento
 
-# Solicitar al usuario el monto de la compra
-monto_compra = float(input("Ingrese el monto total de la compra: $"))
 
-# Definir el porcentaje de descuento según el monto
-if monto_compra >= 500:
-    descuento = 0.20  # 20% de descuento
-elif monto_compra >= 200:
-    descuento = 0.10  # 10% de descuento
-elif monto_compra >= 100:
-    descuento = 0.05  # 5% de descuento
-else:
-    descuento = 0.0   # Sin descuento
+# Programa principal
+if __name__ == "__main__":
+    # 1ra llamada: solo monto (usa el 10% por defecto)
+    monto1 = 300
+    descuento1 = calcular_descuento(monto1)
+    total1 = monto1 - descuento1
+    print("---- Primera Compra ----")
+    print(f"Monto original: ${monto1:.2f}")
+    print(f"Descuento aplicado: ${descuento1:.2f}")
+    print(f"Monto final a pagar: ${total1:.2f}")
 
-# Calcular el monto del descuento
-monto_descuento = monto_compra * descuento
-
-# Calcular el monto final a pagar después del descuento
-monto_final = monto_compra - monto_descuento
-
-# Mostrar resultados
-print(f"Monto de la compra: ${monto_compra:.2f}")
-print(f"Monto del descuento: ${monto_descuento:.2f}")
-print(f"Monto final a pagar: ${monto_final:.2f}")
+    # 2da llamada: monto + porcentaje de descuento (20%)
+    monto2 = 800
+    descuento2 = calcular_descuento(monto2, 0.20)
+    total2 = monto2 - descuento2
+    print("\n---- Segunda Compra ----")
+    print(f"Monto original: ${monto2:.2f}")
+    print(f"Descuento aplicado: ${descuento2:.2f}")
+    print(f"Monto final a pagar: ${total2:.2f}")
