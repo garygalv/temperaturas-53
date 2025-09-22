@@ -1,0 +1,25 @@
+# Programa para calcular descuento según el monto de la compra
+
+# Solicitar al usuario el monto de la compra
+monto_compra = float(input("Ingrese el monto total de la compra: $"))
+
+# Definir el porcentaje de descuento según el monto
+if monto_compra >= 500:
+    descuento = 0.20  # 20% de descuento
+elif monto_compra >= 200:
+    descuento = 0.10  # 10% de descuento
+elif monto_compra >= 100:
+    descuento = 0.05  # 5% de descuento
+else:
+    descuento = 0.0   # Sin descuento
+
+# Calcular el monto del descuento
+monto_descuento = monto_compra * descuento
+
+# Calcular el monto final a pagar después del descuento
+monto_final = monto_compra - monto_descuento
+
+# Mostrar resultados
+print(f"Monto de la compra: ${monto_compra:.2f}")
+print(f"Monto del descuento: ${monto_descuento:.2f}")
+print(f"Monto final a pagar: ${monto_final:.2f}")
